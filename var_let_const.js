@@ -1,16 +1,16 @@
-//var
-//Redeclaration and Reassignment is possible
-var x=5;
-var x=10;
-console.log(x);
+//vat-let-const global , local scoping and hoisting concept
 
-//let
-//Redeclaration is not possible but Reassignment is possible
-let y=5;
-y=20;
-console.log(y);
-//const
-//Redeclaration and Reassignment is not possible
-const z=5;
-z=10;
-console.log(z);
+var browserName = "Chrome";//global scope
+function getBrowserName(){
+    if(true){
+        console.log("Browser name is: "+browserName);
+    }
+    var browserName="Firefox";//local scope
+    console.log("Browser name is:" +browserName);
+}
+getBrowserName();
+// explaning the above code: The variable browserName is declared using var inside the function getBrowserName().
+//  This means that it has a local scope within the function. 
+// However, when you try to access the variable before its declaration, it will result in undefined due to hoisting.
+//  The first console.log statement will output "Browser name is: undefined" because the local variable browserName is hoisted but not yet assigned a value. 
+// The second console.log statement will output "Browser name is: Firefox" because the local variable is now assigned the value "Firefox".  
